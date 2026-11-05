@@ -1,31 +1,29 @@
 class Chaar < Formula
   desc "Terminals on your machines, from anywhere"
   homepage "https://chaar.ai"
-  version "0.1.0-alpha.1"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.1/chaar-aarch64-apple-darwin.tar.xz"
-      sha256 "4b4737597b064760378b9ce8dc3bbf009f28b19abd465c8fcb66ae9ffcdc2a6e"
-    end
+  version "0.1.0-alpha.3"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.3/chaar-aarch64-apple-darwin.tar.xz"
+    sha256 "8d1edd2c3703b2ed3b68ce38c973b0a6d3171f87c759dea45e0846eab3f949d7"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.1/chaar-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "331cffda9909d0e9eb38a4143ec833e2e4a4d0a4a18c4541856caaf3be283536"
+      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.3/chaar-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "af4c1ecc813a8f312761eb91a3b32a3ac874a55ca442c15d9983f52c4a0b01be"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.1/chaar-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "42f324de16618ce551d37a9b0608872883a11e976d1f5c9feeef459562b4a5a3"
+      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.3/chaar-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "22ede4f483df2ff04757ce6cdae188a2a8ecd38925803d46715cb112acf01bf1"
     end
   end
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
-    "aarch64-pc-windows-gnu": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-pc-windows-gnu":    {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
