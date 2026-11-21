@@ -1,19 +1,19 @@
 class Chaar < Formula
   desc "Terminals on your machines, from anywhere"
   homepage "https://chaar.ai"
-  version "0.1.0-alpha.6"
+  version "0.1.0-alpha.7"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.6/chaar-aarch64-apple-darwin.tar.xz"
-    sha256 "4764411b9d8e7f0061dc7cf02a79bf8743cba6b70271a8f8f99649566748d341"
+    url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.7/chaar-aarch64-apple-darwin.tar.xz"
+    sha256 "babbb76f20346670770e3913b7f3846b34359c43edf5f5ba009e7aa4ec28551f"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.6/chaar-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "47871661996b6e2d6586282f9c8f20ad709b5b167b4a9fc17957a1882f7b45cd"
+      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.7/chaar-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "98ac2d3917bfefc68bc44e71be69e0848f4a876882ab97aed8f2a3521ea6f81d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.6/chaar-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3a47cc6553c1505c1235aa096f01348284dbcaca6905e979495ab1a6488877a1"
+      url "https://github.com/sixtythreelabs/chaar-releases/releases/download/cli/v0.1.0-alpha.7/chaar-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "c2c2fe2feb24b0ba1634aa1088b710c159321068486643fe1c060c06660e7bdd"
     end
   end
 
